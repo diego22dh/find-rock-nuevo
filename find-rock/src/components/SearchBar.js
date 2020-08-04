@@ -1,4 +1,6 @@
 import React from "react";
+import "./search-bar.css";
+import logo from "../logo.svg";
 
 class SearchBar extends React.Component {
     handleChange = (e) => {
@@ -15,32 +17,26 @@ class SearchBar extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="container-fluid">
+                <div className="container">
                     <div className="row">
-                        <div className="col md-2">logo</div>
-                        <div className="col md-4">
+                        <div className="col md-2">
+                            <img src={logo} alt="logo" className="logo-barra" />
+                        </div>
+                        <div className="col md-6">
                             <form
                                 name="form"
                                 className="form-inline"
                                 onSubmit={this.handleSubmit}
                             >
-                                <div className="form-group mx-sm-3 mb-2">
+                                <div className="busqueda">
                                     <input
                                         name="input"
                                         type="text"
-                                        className="form-control"
+                                        id="buscar"
                                         placeholder="Que banda queres buscar?"
                                         onChange={this.handleChange}
                                     />
                                 </div>
-                                <button
-                                    nane="buscar"
-                                    type="submit"
-                                    className="btn btn-primary mb-2"
-                                    // onClick={this.handleClick}
-                                >
-                                    Buscar
-                                </button>
                             </form>
                         </div>
                     </div>
